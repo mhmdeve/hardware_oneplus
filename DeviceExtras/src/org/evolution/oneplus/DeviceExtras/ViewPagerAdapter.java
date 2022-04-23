@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package org.evolution.oneplus.DeviceExtras.panelsettings;
+package org.evolution.oneplus.DeviceExtras;
 
 import android.content.Context;
 import androidx.viewpager.widget.PagerAdapter;

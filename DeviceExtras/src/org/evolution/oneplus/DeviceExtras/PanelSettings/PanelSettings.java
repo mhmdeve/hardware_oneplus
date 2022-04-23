@@ -58,6 +58,7 @@ import org.evolution.oneplus.DeviceExtras.modeswitch.CustomerSRGBModeSwitch;
 import org.evolution.oneplus.DeviceExtras.modeswitch.WideModeSwitch;
 import org.evolution.oneplus.DeviceExtras.modeswitch.LoadingEffectModeSwitch;
 import org.evolution.oneplus.DeviceExtras.R;
+import org.evolution.oneplus.DeviceExtras.ViewPagerAdapter;
 
 public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCheckedChangeListener {
     private RadioGroup mRadioGroup;
