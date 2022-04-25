@@ -25,14 +25,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.animation.AccelerateInterpolator;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -44,9 +41,6 @@ import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 
 import java.util.Arrays;
-import java.util.Random;
-
-import com.plattysoft.leonids.ParticleSystem;
 
 import org.evolution.oneplus.DeviceExtras.doze.DozeSettingsActivity;
 import org.evolution.oneplus.DeviceExtras.FileUtils;
@@ -122,7 +116,6 @@ public class DeviceExtras extends PreferenceFragment
     private CustomSeekBarPreference mFpsInfoTextSizePreference;
     private EarGainPreference mEarGain;
     private Preference mDozeSettings;
-    private Preference mHBMInfo;
     private Preference mTouchScreenGestureSettings;
     private ListPreference mBottomKeyPref;
     private ListPreference mMiddleKeyPref;
@@ -221,34 +214,6 @@ public class DeviceExtras extends PreferenceFragment
         if (!displayCategory) {
             getPreferenceScreen().removePreference((Preference) findPreference(KEY_CATEGORY_DISPLAY));
         }
-
-        // EasterEgg (HBM Info)
-        mHBMInfo = (Preference)findPreference(KEY_HBM_INFO);
-        mHBMInfo.setOnPreferenceClickListener(preference -> {
-
-        Random rand =new Random();
-
-        int firstRandom = rand.nextInt(91-0);
-        int secondRandom = rand.nextInt(181-90)+90;
-        int thirdRandom = rand.nextInt(181-0);
-
-        Drawable evo = getResources().getDrawable(R.drawable.evo,null);
-        int randomColor;
-        randomColor = Color.rgb(
-        Color.red(rand.nextInt(0xFFFFFF)),
-        Color.green(rand.nextInt(0xFFFFFF)),
-        Color.blue(rand.nextInt(0xFFFFFF)));
-        evo.setTint(randomColor);
-
-        ParticleSystem ps = new ParticleSystem(getActivity(),50,evo,2000);
-        ps.setScaleRange(0.7f,1.3f);
-        ps.setSpeedRange(0.1f,0.25f);
-        ps.setAcceleration(0.0001f,thirdRandom);
-        ps.setRotationSpeedRange(firstRandom,secondRandom);
-        ps.setFadeOut(300);
-        ps.oneShot(this.getView(),50);
-        return true;
-        });
 
         // FPS
         if (isFeatureSupported(context, R.bool.config_deviceSupportsFPS)) {
