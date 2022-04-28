@@ -7,6 +7,3 @@ do_makefiles_update \
 
 do_makefiles_update \
   "vendor.oneplus:hardware/oneplus/interfaces/oneplus"
-
-do_makefiles_update \
-  "vendor.kscope:hardware/oneplus/interfaces"

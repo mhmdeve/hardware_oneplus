@@ -7,8 +7,3 @@ hidl_package_root {
     name: "vendor.oneplus",
     path: "hardware/oneplus/interfaces/oneplus",
 }
-
-hidl_package_root {
-    name: "vendor.kscope",
-    path: "hardware/oneplus/interfaces",
-}
