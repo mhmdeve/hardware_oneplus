@@ -173,5 +173,8 @@
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
             </intent-filter>
         </provider>
+        <service
+            android:name=".ClientPackageObserverService"
+            android:exported="false" />
     </application>
 </manifest>
